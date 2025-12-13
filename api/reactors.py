@@ -19,7 +19,7 @@ class handler(BaseHTTPRequestHandler):
     def do_GET(self):
         try:
             # 1. Connect to Neon
-            conn = psycopg2.connect(os.environ["DATABASE_URL"])
+            conn = psycopg2.connect(os.environ["POSTGRES_URL"])
             cursor = conn.cursor()
 
             # 2. Query all presets

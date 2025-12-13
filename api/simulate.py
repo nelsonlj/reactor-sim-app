@@ -61,7 +61,7 @@ class handler(BaseHTTPRequestHandler):
 
             # 3. SAVE TO NEON DATABASE
             # We connect, insert, and close quickly.
-            conn = psycopg2.connect(os.environ["DATABASE_URL"])
+            conn = psycopg2.connect(os.environ["POSTGRES_URL"])
             cursor = conn.cursor()
             
             insert_query = """
