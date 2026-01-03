@@ -30,14 +30,14 @@ class handler(BaseHTTPRequestHandler):
             reactor_type = data.get('reactorType', 'Unknown')
             enrichment = float(data.get('enrichment', 5.0))
             pressure = float(data.get('pressure', 15.5))
-            years = int(data.get('years', 60))
+            years = int(data.get('years', 70))
 
             # 2. RUN THE PHYSICS SIMULATION (Python Logic)
             simulation_results = []
             
             for t in range(years + 1):
-                # Linear degradation: 0% at year 0, 100% at year 60
-                degradation = (t / 60.0) * 100.0
+                # Linear degradation: 0% at year 0, 100% at year 70
+                degradation = (t / 70.0) * 100.0
                 
                 # Fuel Burnup Model:
                 # Starts at enrichment level, depletes to 0 around year 50
